@@ -23,11 +23,11 @@
     </div>
     <nav>
       <ul>
-        <li class="selected"><a href="#"><i class='bx bxs-home'></i>Home</a></li>
-        <li><a href="#"><i class='bx bxs-chat'></i>Messages</a></li>
-        <li><a href="#"><i class='bx bxs-briefcase' ></i>My Works</a></li>
-        <li><a href="#"><i class='bx bxs-bookmark' ></i>Saved Jobs</a></li>
-        <li><a href="#"><i class='bx bxs-cog' ></i>Settings</a></li>
+        <li class="selected"><a href="#"><i class='bx bxs-home'></i><span>Home</span></a></li>
+        <li><a href="#"><i class='bx bxs-chat'></i><span>Messages</span></a></li>
+        <li><a href="#"><i class='bx bxs-briefcase' ></i><span>My Works</span></a></li>
+        <li><a href="#"><i class='bx bxs-bookmark' ></i><span>Saved Jobs</span></a></li>
+        <li><a href="#"><i class='bx bxs-cog' ></i><span>Settings</span></a></li>
       </ul>
     </nav>
     <div class="profile-card">
@@ -187,7 +187,7 @@
                 <div class="infos">
                   <div class="header">
                     <h4>Amazon</h4>
-                    <p>| This weel</p>
+                    <p>| This week</p>
                   </div>
                   <p class="title">Pleno JavaScript (React) Developer</p>
                   <p class="location">Los Angeles, USA</p>
@@ -229,6 +229,132 @@
       </div>
     </main>
     <section class="right-section">
+      <div class="separator">
+        <h2>Job Filter</h2>
+        <p>Clear all</p>
+      </div>
+      <div class="filter-container">
+        <div class="item">
+          <div class="title">
+            <h3>Time</h3>
+            <p>Clear</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="just-now">
+              <label for="just-now">Just Now</label>
+            </div>
+            <p>20 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="weekly">
+              <label for="weekly">Weekly</label>
+            </div>
+            <p>50 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="monthly">
+              <label for="monthly">Monthly</label>
+            </div>
+            <p>90 jobs</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">
+            <h3>Experience</h3>
+            <p>Clear</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="entry">
+              <label for="entry">Entry</label>
+            </div>
+            <p>30 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="junior">
+              <label for="junior">Junior</label>
+            </div>
+            <p>50 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="pleno">
+              <label for="pleno">Pleno</label>
+            </div>
+            <p>10 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="senior">
+              <label for="senior">Senior</label>
+            </div>
+            <p>40 jobs</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">
+            <h3>Job Type</h3>
+            <p>Clear</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="full-time">
+              <label for="full-time">Full Time</label>
+            </div>
+            <p>60 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="part-time">
+              <label for="part-time">Part Time</label>
+            </div>
+            <p>40 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="clt">
+              <label for="clt">CLT</label>
+            </div>
+            <p>80 jobs</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="contract">
+              <label for="contract">Contract</label>
+            </div>
+            <p>70 jobs</p>
+          </div>
+        </div>
+        <div class="item" id="item-location">
+          <div class="title">
+            <h3>Location</h3>
+            <p>Clear</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="on-site">
+              <label for="on-site">On Site</label>
+            </div>
+            <p>100 jobs</p>
+          </div>
+          <div class="check-content" id="check-location">
+              <i class='bx bxs-map' ></i>
+              <p>Seach Location</p>
+          </div>
+          <div class="check-content">
+            <div class="check">
+              <input type="checkbox" id="remote">
+              <label for="remote">Remote</label>
+            </div>
+            <p>40 jobs</p>
+          </div>
+        </div>
+        <button>Filter</button>
+      </div>
     </section>
   </div>
 </body>

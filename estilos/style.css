@@ -4,6 +4,19 @@
   --dark-gray: #333;
   --gray: #888;
   --light-gray: #e9e9e9;
+  --background: #fdfdfd;
+  --left-background: #000;
+}
+
+body.dark {
+  --light: #000;
+  --dark: #fff;
+  --dark-gray: #e9e9e9;
+  --gray: #888;
+  --light-gray: #333;
+  --background: #080808;
+  --left-background: #141414;
+  transition: all .3s ease;
 }
 
 * {
@@ -24,17 +37,15 @@ button {
   cursor: pointer;
 }
 
+h2, h3, h4 {
+  color: var(--dark);
+}
+
 body {
   height: 100vh;
 }
 
-body.dark {
-  --light: #000;
-  --dark: #fff;
-  --gray: #999;
-  --light-gray: #333;
-  transition: all .3s ease;
-}
+
 
 /*left-section styles*/
 
@@ -42,21 +53,18 @@ body.dark {
   width: 170px;
   position: fixed;
   height: 100%;
-  background: var(--dark);
+  background: var(--left-background);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
 }
 
-.left-section .title {
-  color: var(--light);
-}
-
 .left-section .title h1 {
   font-size: 1.75rem;
   font-weight: 800;
   margin-bottom: 4px;
+  color: #fff;
 }
 
 .left-section .title p {
@@ -85,6 +93,12 @@ body.dark {
 
 .left-section nav ul li:hover:not(li.selected) a {
   color: var(--light);
+  text-shadow: 0px 0px 4px rgb(255, 255, 255, 0.5);
+}
+
+body.dark .left-section nav ul li:hover:not(li.selected) a {
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+  color: var(--dark);
 }
 
 .left-section nav ul li a {
@@ -136,7 +150,7 @@ body.dark {
 .left-section .profile-card .portfolio {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 .left-section .profile-card .portfolio h3 {
@@ -150,7 +164,8 @@ body.dark {
   gap: 4px;
 }
 
-.left-section .profile-card .portfolio .skills .item {
+.left-section .profile-card .portfolio .skills .item,
+main .container .item .top .left .tags .tag {
   padding: 4px;
   background: var(--light-gray);
   font-size: 0.825rem;
@@ -160,9 +175,12 @@ body.dark {
   transition: all .3s ease;
 }
 
+body.dark .left-section .profile-card .portfolio .skills .item {
+  color: var(--dark-gray);
+}
+
 .left-section .profile-card .portfolio .skills .item:hover {
   background: var(--gray);
-  color: var(--dark-gray);
 }
 
 .left-section .profile-card .portfolio button {
@@ -176,17 +194,26 @@ body.dark {
   transition: all .3s ease;
 }
 
+body.dark .left-section .profile-card .portfolio button {
+  background: var(--dark-gray);
+}
+
 .left-section .profile-card button:hover {
   background: var(--dark-gray);
+}
+
+body.dark .left-section .profile-card .portfolio button:hover {
+  background-color: var(--light-gray);
+  color: var(--dark);
 }
 
 /*container styles*/
 
 .content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   padding: 15px;
-  background: #fdfdfd;
+  background: var(--background);
   width: 100%;
   margin-left: 170px;
   width: calc(100vw - 187px);
@@ -229,7 +256,7 @@ body.dark {
   gap: 4px;
   width: 50%;
   background: var(--light-gray);
-  padding: 4px;
+  padding: 4px 8px;
   border-radius: 8px;
 }
 
@@ -246,6 +273,11 @@ body.dark {
   line-height: 1.75rem;
   font-size: 0.95rem;
   color: var(--dark-gray);
+}
+
+.content header .search-container .search-area i:has(+ input:focus-within),
+.content header .search-container .location-area i:has(+ input:focus-within) {
+  color: var(--dark);
 }
 
 .content header .search-container .search-area input::placeholder,
@@ -267,6 +299,11 @@ body.dark {
 
 .content header .search-btn:hover {
   background: var(--dark-gray);
+}
+
+body.dark .content header .search-btn:hover {
+  background: var(--light-gray);
+  color: var(--dark);
 }
 
 .content header #theme-toggle {
@@ -360,7 +397,7 @@ body.dark {
 
 /*main styles*/
 
-main .separator {
+main .separator{
   margin: 15px 0;
 }
 
@@ -390,7 +427,7 @@ main .container {
 
 main .container .item {
   background: var(--light);
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 8px;
   display: flex;
@@ -400,8 +437,16 @@ main .container .item {
   transition: all .3s ease;
 }
 
+body.dark main .container .item {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.055);
+}
+
 main .container .item:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark main .container .item:hover {
+  box-shadow: 0 0px 25px rgba(255, 255, 255, 0.1);
 }
 
 main .container .item .top {
@@ -448,6 +493,7 @@ main .container .item .top .left .head .infos .header p {
 main .container .item .top .left .head .infos p.title {
   font-size: 0.9rem;
   font-weight: 700;
+  color: var(--dark);
 }
 
 main .container .item .top .left .head .infos p.location {
@@ -458,16 +504,6 @@ main .container .item .top .left .head .infos p.location {
 main .container .item .top .left .tags {
   display: flex;
   gap: 8px;
-}
-
-main .container .item .top .left .tags .tag {
-  background: var(--light-gray);
-  color: var(--dark-gray);
-  font-size: 0.9rem;
-  padding: 3px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all .3s ease;
 }
 
 main .container .item .top .left .tags .tag:hover {
@@ -487,4 +523,133 @@ main .container .item .top > i:hover {
 main .container .item p.description {
   font-size: 0.875rem;
   color: var(--gray);
+  text-overflow: '...';
 }
+
+/*right-section*/
+
+.right-section {
+  padding: 0 15px 0 20px;
+}
+
+.right-section .separator {
+  display: flex;
+  margin: calc(15px + .5rem) 0;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.right-section .separator h2 {
+  font-size: 1.25rem;
+}
+
+.right-section .separator p,
+.right-section .filter-container .item .title p {
+  line-height: 1.25rem;
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.right-section .separator p:hover,
+.right-section .filter-container .item .title p:hover {
+  color: #ce0000;
+}
+
+.right-section .filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.right-section .filter-container .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.right-section .filter-container .item .check-content,
+.right-section .filter-container .item .title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-section .filter-container .item .title h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.right-section .filter-container .item .check-content .check {
+  display: flex;
+  gap: 8px;
+}
+
+.right-section .filter-container .item .check-content .check label,
+.right-section .filter-container .item .check-content p {
+  color: var(--gray);
+  font-size: 0.85rem;
+  transition: all .3s ease;
+}
+
+.right-section .filter-container .item .check-content .check input:checked~label{
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.right-section .filter-container .item#item-location .check-content#check-location {
+  justify-content: start;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  background: var(--light-gray);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+body.dark .right-section .filter-container .item#item-location .check-content#check-location {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+.right-section .filter-container .item#item-location .check-content#check-location:hover,
+body.dark .right-section .filter-container .item#item-location .check-content#check-location:hover {
+  background: var(--dark);
+  box-shadow: none;
+}
+
+.right-section .filter-container .item#item-location .check-content#check-location i,
+.right-section .filter-container .item#item-location .check-content#check-location p {
+  color: var(--gray);
+  transition: all .3s ease;
+}
+
+.right-section .filter-container .item#item-location .check-content#check-location:hover i,
+.right-section .filter-container .item#item-location .check-content#check-location:hover p {
+  color: var(--light);
+}
+
+.right-section .filter-container button {
+  background: var(--dark);
+  color: var(--light);
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  transition: all .3s ease;
+}
+
+.right-section .filter-container button:hover {
+  background: var(--dark-gray);
+}
+
+body.dark .right-section .filter-container button:hover {
+  background: var(--light-gray);
+  color: var(--dark);
+}
+
+/*media queries*/
