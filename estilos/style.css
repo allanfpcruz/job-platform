@@ -396,7 +396,6 @@ body.dark .content header .search-btn:hover {
 }
 
 /*main styles*/
-
 main .separator{
   margin: 15px 0;
 }
@@ -468,6 +467,7 @@ main .container .item .top .left .head {
 
 main .container .item .top .left .head i {
   background: var(--light-gray);
+  color: var(--dark);
   padding: 6px;
   font-size: 2rem;
   border-radius: 4px;
@@ -584,6 +584,29 @@ main .container .item p.description {
 .right-section .filter-container .item .check-content .check {
   display: flex;
   gap: 8px;
+  position: relative;
+}
+
+.right-section .filter-container .item .check-content .check input {
+  visibility: hidden;
+}
+
+.right-section .filter-container .item .check-content .check label::before {
+  position: absolute;
+  width: calc(0.85rem * 1.25);
+  height: calc(0.85rem * 1.25);
+  content: "";
+  background: var(--light-gray);
+  left: -2px;
+  top: -1px;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  transition: all .3s ease;
+}
+
+.right-section .filter-container .item .check-content .check input[type="checkbox"]:checked ~ label::before {
+  background: var(--dark);
+  border-color: transparent;
 }
 
 .right-section .filter-container .item .check-content .check label,
@@ -653,3 +676,6 @@ body.dark .right-section .filter-container button:hover {
 }
 
 /*media queries*/
+@media screen and (max-width: 1280px) {
+
+}
