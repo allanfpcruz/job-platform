@@ -50,7 +50,7 @@ body {
 /*left-section styles*/
 
 .left-section {
-  width: 170px;
+  width: 160px;
   position: fixed;
   height: 100%;
   background: var(--left-background);
@@ -151,6 +151,7 @@ body.dark .left-section nav ul li:hover:not(li.selected) a {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
 }
 
 .left-section .profile-card .portfolio h3 {
@@ -215,7 +216,7 @@ body.dark .left-section .profile-card .portfolio button:hover {
   padding: 15px;
   background: var(--background);
   width: 100%;
-  margin-left: 170px;
+  margin-left: 160px;
   width: calc(100vw - 187px);
 }
 
@@ -677,5 +678,31 @@ body.dark .right-section .filter-container button:hover {
 
 /*media queries*/
 @media screen and (max-width: 1280px) {
+  .left-section .profile-card .portfolio h3,
+  .left-section .profile-card .portfolio .skills {
+    display: none;
+  }
+}
 
+@media screen and (max-width: 1024px) {
+  .left-section {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .content header i#toggle-menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+}
+
+@media screen and (max-width: 568px) {
+  
 }
