@@ -13,7 +13,8 @@ themeBtn.addEventListener('change', (e) => {
 const navbar = document.querySelectorAll('.left-section nav ul li')
 
 navbar.forEach(item => {
-  item.addEventListener('click', () => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault()
     navbar.forEach(navItem => {
       navItem.classList.remove('selected')
     })

@@ -1,0 +1,154 @@
+/*media queries*/
+@media screen and (max-width: 1280px) {
+  .left-section .profile-card .portfolio h3,
+  .left-section .profile-card .portfolio .skills {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .content header i#toggle-menu {
+    display: block;
+  }
+
+  main .separator .sep-title h2,
+  .right-section .separator h2 {
+    font-size: 1.1rem;
+  } 
+
+  main .separator .sep-title p.number,
+  main .separator > p,
+  .right-section .separator p,
+  .right-section .filter-container .item .title p {
+    font-size: .8rem;
+    line-height: 1rem;
+  }
+
+  .right-section .filter-container .item .title h3 {
+    font-size: .95rem;
+  }
+
+  .right-section .filter-container .item .check-content .check label::before { 
+    width: calc(0.8rem * 1.25);
+    height: calc(0.8rem * 1.25);
+  }
+
+  .right-section .filter-container .item .check-content .check label,
+  .right-section .filter-container .item .check-content p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .content header .search-container .search-area {
+    width: 100%;
+  }
+
+  .content header .search-container .location-area {
+    display: none;
+  }
+
+  main .container .item .top .left .head .infos .header h4,
+  main .container .item .top .left .head .infos p.title {
+    font-size: 0.8rem;
+  }
+
+  main .container .item .top .left .head .infos .header p,
+  main .container .item .top .left .head .infos p.location {
+    font-size: 0.7rem;
+  }
+
+  main .container .item .top .left .tags .tag {
+    font-size: 0.75rem;
+  }
+
+  main .container .item .top > i {
+    font-size: 1.25rem;
+  }
+
+  main .container .item p.description {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content main {
+    grid-column: 1/3;
+  }
+
+  .right-section {
+    grid-column: 1/3;
+  }
+
+  .right-section .filter-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .right-section .filter-container .item {
+    flex: 1;
+  }
+
+  .right-section .filter-container .item .check-content,
+  .right-section .filter-container .item .title {
+    gap: 40px;
+  }
+
+  .right-section .filter-container .item .check-content .check label,
+  .right-section .filter-container .item .check-content p {
+    text-wrap: nowrap;
+  }
+
+  .right-section .filter-container button {
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .content header {
+    position: relative;
+    margin-top: 75px;
+    z-index: 0;
+  }
+  
+  .content header .profile {
+    position: absolute;
+    top: -75px;
+    left: 0;
+    order: -1;
+    flex: 1;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  
+  body.dark .content header .profile {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.055);
+  }
+  
+  .content header .profile:hover {
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  body.dark .content header .profile:hover {
+    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.1);
+  }
+
+  main .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .container .item {
+    flex: 1;
+  }
+}

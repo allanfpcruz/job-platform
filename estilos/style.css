@@ -56,6 +56,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
+  z-index: 1000;
 }
 
 .left-section .title h1 {
@@ -480,6 +481,16 @@ main .container .item .top .left .head .infos .header {
   display: flex;
 }
 
+main .container .item .top .left .head .infos .header h4,
+main .container .item .top .left .head .infos p.title {
+  line-height: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  height: calc(18px * 1);
+}
+
 main .container .item .top .left .head .infos .header h4 {
   font-size: 0.85rem;
   font-weight: 700;
@@ -526,7 +537,12 @@ main .container .item .top > i:hover {
 main .container .item p.description {
   font-size: 0.875rem;
   color: var(--gray);
+  line-height: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   overflow: hidden;
+  height: calc(18px * 3);
 
 }
 
@@ -552,7 +568,7 @@ main .container .item p.description {
   line-height: 1.25rem;
   color: #ff0000;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all .3s ease;
 }
@@ -677,31 +693,4 @@ body.dark .right-section .filter-container .item#item-location .check-content#ch
 body.dark .right-section .filter-container button:hover {
   background: var(--light-gray);
   color: var(--dark);
-}
-
-/*media queries*/
-@media screen and (max-width: 1280px) {
-  .left-section .profile-card .portfolio h3,
-  .left-section .profile-card .portfolio .skills {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .content {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .content header i#toggle-menu {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  
-}
-
-@media screen and (max-width: 568px) {
-  
 }
