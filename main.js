@@ -67,13 +67,11 @@ toggleMenu.addEventListener('click', () => {
 })
 
 //fechar left-section 
-if (window.innerWidth <= 1024) {
   document.addEventListener('click', (e) => {
-    if (checkTheLeftSection(e.target)) {
+    if (checkTheLeftSection(e.target) && window.innerWidth <= 1024) {
       leftSection.style.display = 'none'
     }
   })
-}
 
 function checkTheLeftSection(element) {
   if (element.classList.contains('left-section') || element.classList.contains('title') || element.nodeName == 'H1' || element.classList.contains('title-phrase') || element.nodeName == 'NAV' || element.nodeName == 'UL' || element.nodeName == 'LI' || element.nodeName == 'A' || element.nodeName == 'SPAN' || element.classList.contains('nav-icon') || element.classList.contains('profile-card') || element.classList.contains('infos') || element.classList.contains('title') || element.classList.contains('profile-img') || element.classList.contains('profile-title') || element.classList.contains('profile-phrase') || element.classList.contains('profile-button') || element.id == 'toggle-menu') {
@@ -84,9 +82,10 @@ function checkTheLeftSection(element) {
 }
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth >= 1028) {
+  if (window.innerWidth > 1024) {
     leftSection.style.display = 'flex'
   } else {
     leftSection.style.display = 'none'
   }
 })
+
