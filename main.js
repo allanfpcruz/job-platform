@@ -3,7 +3,6 @@ const themeBtn = document.getElementById('theme-toggle')
 
 themeBtn.addEventListener('change', (e) => {
   if (e.target.checked) {
-    
     document.body.classList.add('dark')
   } else {
     document.body.classList.remove('dark')
@@ -83,3 +82,11 @@ function checkTheLeftSection(element) {
     return true
   }
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1028) {
+    leftSection.style.display = 'flex'
+  } else {
+    leftSection.style.display = 'none'
+  }
+})

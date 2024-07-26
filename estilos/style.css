@@ -45,12 +45,10 @@ body {
   height: 100vh;
 }
 
-
-
 /*left-section styles*/
 
 .left-section {
-  width: 160px;
+  width: 170px;
   position: fixed;
   height: 100%;
   background: var(--left-background);
@@ -155,6 +153,7 @@ body.dark .left-section nav ul li:hover:not(li.selected) a {
 }
 
 .left-section .profile-card .portfolio h3 {
+  align-self: center;
   font-size: 0.825rem;
   font-weight: 700;
 }
@@ -216,7 +215,7 @@ body.dark .left-section .profile-card .portfolio button:hover {
   padding: 15px;
   background: var(--background);
   width: 100%;
-  margin-left: 160px;
+  margin-left: 170px;
   width: calc(100vw - 187px);
 }
 
@@ -401,18 +400,18 @@ main .separator{
   margin: 15px 0;
 }
 
-main .separator .title {
+main .separator .sep-title {
   display: flex;
   align-items: end;
   gap: 4px;
 }
 
-main .separator .title h2 {
+main .separator .sep-title h2 {
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-main .separator .title p.number,
+main .separator .sep-title p.number,
 main .separator > p {
   font-size: 0.9rem;
   color: var(--gray);
@@ -426,6 +425,9 @@ main .container {
 }
 
 main .container .item {
+  max-height: 160px;
+  overflow: hidden;
+  text-overflow: '...';
   background: var(--light);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -524,7 +526,8 @@ main .container .item .top > i:hover {
 main .container .item p.description {
   font-size: 0.875rem;
   color: var(--gray);
-  text-overflow: '...';
+  overflow: hidden;
+
 }
 
 /*right-section*/
@@ -685,10 +688,6 @@ body.dark .right-section .filter-container button:hover {
 }
 
 @media screen and (max-width: 1024px) {
-  .left-section {
-    display: none;
-  }
-
   .content {
     width: 100%;
     margin-left: 0;
